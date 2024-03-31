@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: rgba(14, 15, 15, 0.651);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .shopping-item{
+            width: 250px;
+            height: 300px;
+        }
+        .cardElement{
+            width: 50vw;
+            height: fit-content;
+            display: flex;
+            justify-content: space-around;
+            background-color: beige;
+            padding: 15px 10px;
+            margin-bottom: 30px;
+        }
+        .textElement{
+            display: flex;
+            flex-direction: column;
+            color: rgba(14, 15, 15, 0.651);
+        }
+        #showPrice{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            color: rgba(14, 15, 15, 0.651);
+        }
+        .getDiscount{
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Корзина</h1>
+        <div class="cardElement">
+            <img class="shopping-item" src="./images/dress.jpeg" alt="">
+            <div class="textElement">
+                <h2>Платье</h2>
+                <p>Цвет: красный</p>
+                <p>Размер: 44</p>
+                <p>Количество: 1</p>
+            </div>
+            <div class="container"><span class="showPrice1">11000</span> рублей</div>
+            
+        </div>
+        <div class="cardElement"><img class="shopping-item" src="./images/bag2.jpg" alt="">
+            <div class="textElement">
+                <h2>Сумка</h2>
+                <p>Цвет: бежевый, белый</p>
+                <p>Размер: 40-45 см </p>
+                <p>Количество: 1</p>
+            </div>
+            <div class="container"><span  class="showPrice2">9000</span> рублей</div>
+            </div>
+        <div class="cardElement"><img class="shopping-item" src="./images/leather_jacket.jpg" alt="">
+            <div class="textElement">
+                <h2>Куртка</h2>
+                <p>Цвет: серый</p>
+                <p>Размер: 48</p>
+                <p>Количество: 1</p>
+            </div>
+            <div class="container"><span class="showPrice3">25000</span> рублей</div>
+            </div>
+            <div><span class="totalPrice">45000</span> рублей</div>
+            <button class="getDiscount" onclick="getDiscount()">Применить скидку 20%</button>
+    </div>
+    <script src="./script.js"></script>
+    </body>
+
+</html>

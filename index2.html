@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        color: rgba(14, 15, 15, 0.651);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .shopping-item {
+        width: 250px;
+        height: 300px;
+      }
+      .cardElement {
+        width: 50vw;
+        height: fit-content;
+        display: flex;
+        justify-content: space-around;
+        background-color: beige;
+        padding: 15px 10px;
+        margin-bottom: 30px;
+      }
+      .textElement {
+        display: flex;
+        flex-direction: column;
+        color: rgba(14, 15, 15, 0.651);
+      }
+      #showPrice {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        color: rgba(14, 15, 15, 0.651);
+      }
+      .getDiscount {
+        padding: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Shopping basket</h1>
+      <div class="cardElement">
+        <img class="shopping-item" src="./images/dress.jpeg" alt="" />
+        <div class="textElement">
+          <h2>Платье</h2>
+          <p>Цвет: красный</p>
+          <p>Размер: 44</p>
+          <p>Количество: 1</p>
+        </div>
+        <div class="container">
+          <span class="showPrice1">11000</span> рублей
+        </div>
+      </div>
+      <div class="cardElement">
+        <img class="shopping-item" src="./images/dress.jpeg" alt="" />
+        <div class="textElement">
+          <h2>Платье</h2>
+          <p>Цвет: красный</p>
+          <p>Размер: 44</p>
+          <p>Количество: 1</p>
+        </div>
+        <div class="container">
+          <span class="showPrice2">10000</span> рублей
+        </div>
+      </div>
+      <div class="cardElement">
+        <img class="shopping-item" src="./images/dress.jpeg" alt="" />
+        <div class="textElement">
+          <h2>Платье</h2>
+          <p>Цвет: красный</p>
+          <p>Размер: 44</p>
+          <p>Количество: 1</p>
+        </div>
+        <div class="container">
+          <span class="showPrice3">15000</span> рублей
+        </div>
+      </div>
+      <div><span class="totalPrice">36000</span> рублей</div>
+      <button class="getDiscount" onclick="getDiscount()">
+        Применить скидку 20%
+      </button>
+    </div>
+    <script>
+      // Нахожу все элементы
+      const price1 = document.querySelector(".showPrice1");
+      const price2 = document.querySelector(".showPrice2");
+      const price3 = document.querySelector(".showPrice3");
+      const totalPrice = document.querySelector(".totalPrice");
+      const button = document.querySelector(".getDiscount");
+
+      // Функция на случай, если кнопка уже нажата и скидка применена
+      let isBtnClicked = false; // чтобы применить скидку берем изначально значение фолс для значения нажатой кнопки (если true, то будет считаться, что скидка применена изначально)
+      const getDiscount = () => {
+        if (isBtnClicked) {
+          alert("Discount was applied");
+          return; //прекращаем работу функции
+        }
+        //Считаем 20%
+        //Приводим строку к числу
+        const showPrice1 = Number(price1.textContent);
+        price1.textContent = showPrice1 * 0.8;
+        const showPrice2 = Number(price2.textContent);
+        price2.textContent = showPrice2 * 0.8;
+        const showPrice3 = Number(price3.textContent);
+        price3.textContent = showPrice3 * 0.8;
+        const showTotalPrice = Number(totalPrice.textContent);
+        totalPrice.textContent = showTotalPrice * 0.8;
+
+        isBtnClicked = true;
+      };
+    </script>
+  </body>
+</html>
